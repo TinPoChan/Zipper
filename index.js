@@ -9,7 +9,6 @@ function dropHandler(ev) {
     var files = dt.files;
     ev.preventDefault();
     zipFiles(files);
-    //unZip(files[0]);
 }
 
 // Handle dragover
@@ -54,30 +53,6 @@ function zipFiles(files) {
         result.innerHTML += "Zipped Size: " + sizeToMB(content.size) + " MB" + "<br />" + "Done!";
     });
 }
-
-// Unzip a zip file and export as a foler
-// need fix: it should export as a folder
-function unZip(file) {
-    // JSZip.loadAsync(file).then(function (zip) {
-    //     zip.forEach(function (file) {
-    //         file.async("arraybuffer").then(function (content) {
-    //             const blob = new Blob([content], { type: file.type });
-    //             saveAs(blob, file.name);
-    //         });
-    //     });
-    // });
-
-    var jsZip = new JSZip();
-    jsZip.loadAsync(file).then(function (zip) {
-        Object.keys(zip.files).forEach(function (filename) {
-            zip.files[filename].async('blob').then(function (fileData) {
-                const blob = new Blob([fileData], { type: file.type });
-                saveAs(blob, filename);
-            })
-        })
-    })
-}
-
 
 function sizeToMB(size) {
     return (size * 0.000001).toFixed(2);
