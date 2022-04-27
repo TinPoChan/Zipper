@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+}
+
+#drop_zone {
+  width: 100vw;
+  height: 90vh;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center;
+}
+
+#fileElem {
+  display: none;
+}
+
+#fileSelect {
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#dropText {
+  display: inline;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#result {
+  position: relative;
+  top: 60%;
+  transform: translateY(-50%);
+}
